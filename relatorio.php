@@ -31,7 +31,7 @@
       <td>Informática</td>
     
    	  <td>
-        <a href="informatica_geral.php" class="btn btn-sm btn-warning">Gerar</a>
+        <a href="informatica_geral.php" target="_blank" class="btn btn-sm btn-warning">Gerar</a>
         <!-- <img src="icons/icons/trash-fill.svg"> -->
       </td>
     </tr>

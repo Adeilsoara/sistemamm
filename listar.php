@@ -33,6 +33,7 @@
 	      <td>Endereço</td>
         <td>Cidade</td>
         <td>CEP</td>
+        <td>Opções</td>
 	    </tr>
     </thead>
     <?php while($dados = mysqli_fetch_assoc($sql)) { ?>
@@ -47,7 +48,7 @@
        
         <a href="editar.php?id=<?php echo $questoes['id']; ?>" class="btn btn-sm btn-warning ">Editar</a>
 
-        <a href="deletar.php?id=<?php echo $questoes['id']; ?>" class="btn btn-sm btn-danger " >Excluir</a>
+        <!-- <a href="deletar.php?id=<?php echo $questoes['id']; ?>" class="btn btn-sm btn-danger " >Excluir</a> -->
         
         <!-- <img src="icons/icons/trash-fill.svg"> -->
       </td>
