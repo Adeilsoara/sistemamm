@@ -10,7 +10,7 @@ function Header() {
                                     //TEM 190 DE LARGURA E 280 DE ALTURA. 
                                     //NESTE CASO, É UMA BORDA DE PÁGINA.
 
-        $this->Image('logomm.jpeg',11,11,20); // INSERE UMA LOGOMARCA NO PONTO X = 11, Y = 11, E DE TAMANHO 40.
+        $this->Image('logomm.jpeg',11,11,20); // INSERE UMA LOGOMARCA NO PONTO X = 11, Y = 11, E DE TAMANHO 20.
         $this->SetFont('Arial','B',8); // DEFINE A FONTE ARIAL, NEGRITO (B), DE TAMANHO 8
 
        // $this->Cell(170,15,'INSIRA SEU TEXTO AQUI',0,0,'L'); 
@@ -48,13 +48,13 @@ function Header() {
         $this->Cell(190,$l,utf8_decode('Classificados Informática'),1,0,'C',1);
         $this->Ln();
      
-       	//TITULO DA TABELA DE SERVIÇOS
+       	//TITULO DA TABELA DE ALUNOS
         $this->SetFillColor(232,232,232);
         $this->SetTextColor(0,0,0);
         $this->SetFont('Arial','B',8);
         $this->Cell(100,$l,'Nome ',1,0,'L',1);
-        $this->Cell(31,$l,'Curso',1,0,'l',1);
-        $this->Cell(20,$l,utf8_decode('Média Final'),1,0,'L',1);
+        $this->Cell(45,$l,'Curso',1,0,'l',1);
+        $this->Cell(45,$l,utf8_decode('Média Final'),1,0,'L',1);
         /*$this->Cell(12,$l,'Titulo 4',1,0,'C',1);
         $this->Cell(12,$l,'Titulo 5',1,0,'C',1);
         $this->Cell(40,$l,'Titulo 6',1,0,'C',1);
@@ -109,12 +109,12 @@ while ($row = mysqli_fetch_array($result)) {
     $pdf->MultiCell(51,6,$dados1,0,10);
     $pdf->SetY($y);
     $pdf->SetX(110);
-    $pdf->Rect(110,$y,31,$l);
+    $pdf->Rect(110,$y,45,$l);
    // $pdf->Rect(51,$y,10,$l);
     $pdf->MultiCell(30,5,$dados2,0,2);
     $pdf->SetY($y);
-    $pdf->SetX(141);
-    $pdf->Rect(141,$y,20,$l);
+    $pdf->SetX(160);
+    $pdf->Rect(155,$y,45,$l);
     $pdf->MultiCell(12,6,$dados3,0,2);
     /*$pdf->SetY($y);
     $pdf->SetX(133);
