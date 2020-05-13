@@ -1,0 +1,24 @@
+/* sist_logico: */
+
+CREATE TABLE ALUNO (
+    nome varchar(50),
+    curso varchar(20),
+    endereco varchar(100),
+    cep varchar(15),
+    cidade varchar(30),
+    idaluno int auto_increment PRIMARY KEY
+);
+
+CREATE TABLE NOTAS (
+    fisica float,
+    historia float,
+    portugues float,
+    matematica float,
+    fk_idaluno int,
+    idnotas int auto_increment PRIMARY KEY
+);
+ 
+ALTER TABLE NOTAS ADD CONSTRAINT fk_idaluno_notas
+    FOREIGN KEY (fk_idaluno)
+    REFERENCES ALUNO (idaluno)
+    ON DELETE RESTRICT;
