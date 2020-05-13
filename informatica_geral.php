@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_array($result)) {
    // $pdf->Rect(51,$y,10,$l);
     $pdf->MultiCell(30,5,$dados2,0,2);
     $pdf->SetY($y);
-    $pdf->SetX(160);
+    $pdf->SetX(155);
     $pdf->Rect(155,$y,45,$l);
     $pdf->MultiCell(12,6,$dados3,0,2);
     /*$pdf->SetY($y);

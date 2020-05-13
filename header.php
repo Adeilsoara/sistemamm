@@ -24,7 +24,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="relatorios.php" >Relatórios</a>
+        <a class="nav-link" href="relatorio.php" >Relatórios</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
