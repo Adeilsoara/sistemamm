@@ -1,7 +1,8 @@
+<?php include 'header.php'; ?>
 <?php 
 session_start();
 include 'conexao.php';
-include 'header.php';
+
 
 if (isset($_GET['editar'])) {
 		$id = $_GET['editar'];
@@ -22,23 +23,6 @@ if (isset($_GET['editar'])) {
 		}
 	}
 
-/*if (isset($_POST['editar'])) {
-	$id = $_POST['idaluno'];
-	$nome = $_POST['nome'];
-	$curso = $_POST['curso'];
-	$endereco = $_POST['endereco'];
-	$cidade = $_POST['cidade'];
-	$cep = $_POST['cep'];
-
-	$fisica = $_POST['fisica'];
-	$historia = $_POST['historia'];
-	$portugues = $_POST['portugues'];
-	$matematica = $_POST['matematica'];
-
-	mysqli_query($connection, "UPDATE ALUNO SET nome='$nome', curso='$curso', endereco='$endereco', cidade='$cidade', cep='$cep' WHERE idaluno=$id");
-	//$_SESSION['message'] = "Atualizado!"; 
-	header('location: listar.php');
-}*/
 if (isset($_POST['editar'])) {
     $id = $_POST['idaluno'];
     $nome = $_POST['nome'];
@@ -65,7 +49,8 @@ if (isset($_POST['editar'])) {
     // Se não ocorrer erros executamos o commit para o banco de dados caso contrários desfazemos qualquer alteração
     if ($erro == 0) {
         mysqli_commit($connection);
-        echo "Transação realizada com sucesso, dados atualizados!";
+        //echo "Transação realizada com sucesso, dados atualizados!"; 
+        header('location: listar.php');
     } else {
         mysqli_rollback($connection);
         echo "Ocorrem $erro erro(s) na transação e não foi possível atualizar os dados.";
@@ -143,7 +128,12 @@ if (isset($_POST['editar'])) {
   <br>	
 
   <button type="submit" class="btn btn-primary" name="editar">Editar</button>
-  </form>
+
+  <a href="listar.php" class="btn btn-danger">Cancelar</a>
+</form>
+
+ 
+ 
 </div>
 </body>
 </html>

@@ -24,7 +24,7 @@
 	<br><br><br>
  <div class="container table-responsive">
   <h3>Lista de gabaritos cadastrados</h3>
-  <table class="table table-hover table-sm ">
+  <table class="table table-hover table-sm">
   	<thead>
 	    <tr>
 	      <td>Id</td>
