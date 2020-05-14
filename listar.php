@@ -46,9 +46,9 @@
       <td><?php echo $dados['cep']; ?></td>
       <td>
        
-        <a href="editar.php?id=<?php echo $questoes['id']; ?>" class="btn btn-sm btn-warning ">Editar</a>
+        <a href="editar.php?editar=<?php echo $dados['idaluno']; ?>" class="btn btn-sm btn-warning ">Editar</a>
 
-        <!-- <a href="deletar.php?id=<?php echo $questoes['id']; ?>" class="btn btn-sm btn-danger " >Excluir</a> -->
+        
         
         <!-- <img src="icons/icons/trash-fill.svg"> -->
       </td>

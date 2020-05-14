@@ -12,7 +12,7 @@
         
           <?php
           include 'conexao.php';
-          $sql2 = mysqli_query($connection, "SELECT nome, curso, round(sum(((fisica)+(historia)+(portugues)+(matematica))/4),2 ) AS media FROM ALUNO AS a INNER JOIN NOTAS AS n ON (a.idaluno = n.idnotas) where curso like 'Info%' group by idaluno ORDER BY media ASC");
+          $sql2 = mysqli_query($connection, "SELECT nome, curso, round(sum(((fisica)+(historia)+(portugues)+(matematica))/4),2 ) AS media FROM ALUNO AS a INNER JOIN NOTAS AS n ON (a.idaluno = n.fk_idaluno) where curso like 'Info%' group by idaluno ORDER BY media ASC");
          
          
           while ($dados = mysqli_fetch_array($sql2) ) {
@@ -31,7 +31,7 @@
         var options = {
           chart: {
             title: 'Sistema MM',
-            subtitle: 'Nome, Curso e  Media: 2021',
+            subtitle: 'Nome e Média: 2021',
           }
         };
 

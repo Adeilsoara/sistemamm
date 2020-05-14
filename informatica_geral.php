@@ -25,7 +25,7 @@ function Header() {
         $l = 17;
         $this->SetFont('Arial','B',12);
         $this->SetXY(10,15);
-        $this->Cell(190,$l,'Candidatos Classificados	','B',1,'C');
+        $this->Cell(190,$l,'Candidatos Classificados','B',1,'C');
       
         $l=5;
         $this->SetFont('Arial','B',10);
@@ -86,9 +86,9 @@ $sql = "SELECT nome, curso, round(sum(((fisica)+(historia)+(portugues)+(matemati
 $result = mysqli_query($connection, $sql);
 $l = 5;
 while ($row = mysqli_fetch_array($result)) {
-	$dados1 = utf8_decode($row['0']);
-	$dados2 = utf8_decode($row['1']);
-	$dados3 = $row['2'];
+	$nome = utf8_decode($row['0']);
+	$curso = utf8_decode($row['1']);
+	$media = $row['2'];
 	/*$dados4 = $row['3'];
 	$dados5 = $row['4'];
 	$dados6 = $row['5'];*/
@@ -106,16 +106,16 @@ while ($row = mysqli_fetch_array($result)) {
     $pdf->SetY($y);
     $pdf->SetX(10);
     $pdf->Rect(10,$y,100,$l);
-    $pdf->MultiCell(51,6,$dados1,0,10);
+    $pdf->MultiCell(51,6,$nome,0,10);
     $pdf->SetY($y);
     $pdf->SetX(110);
     $pdf->Rect(110,$y,45,$l);
    // $pdf->Rect(51,$y,10,$l);
-    $pdf->MultiCell(30,5,$dados2,0,2);
+    $pdf->MultiCell(30,5,$curso,0,2);
     $pdf->SetY($y);
     $pdf->SetX(155);
     $pdf->Rect(155,$y,45,$l);
-    $pdf->MultiCell(12,6,$dados3,0,2);
+    $pdf->MultiCell(12,6,$media,0,2);
     /*$pdf->SetY($y);
     $pdf->SetX(133);
     $pdf->Rect(133,$y,12,$l);
