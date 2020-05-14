@@ -71,12 +71,13 @@ if (isset($_POST['editar'])) {
     </div>
     <div class="form-group col-md-6">
       <label>Curso</label>
-      <select name="curso" class="form-control" required="" >
+      <span> <?php echo $curso; ?></span>
+      <select name="curso" class="form-control" required="">
         <option></option> 
-        <option>Enfermagem</option>
-        <option>Informática</option>
-        <option>Administração</option> 
-        <option>Comércio</option>
+        <option value="Informática" <?=($curso == 'Informática')?'selected':''?> >Informática</option>
+        <option value="Enfermagem" <?=($curso == 'Enfermagem')?'selected':''?> >Enfermagem</option>
+        <option value="Administração" <?=($curso == 'Administração')?'selected':''?> >Admistração</option>
+        <option value="Comércio" <?=($curso == 'Comércio')?'selected':''?> >Comércio</option>
       </select>
     </div>
   </div>
