@@ -22,7 +22,7 @@ if (isset($_GET['editar'])) {
 		}
 	}
 
-if (isset($_POST['editar'])) {
+/*if (isset($_POST['editar'])) {
 	$id = $_POST['idaluno'];
 	$nome = $_POST['nome'];
 	$curso = $_POST['curso'];
@@ -38,7 +38,39 @@ if (isset($_POST['editar'])) {
 	mysqli_query($connection, "UPDATE ALUNO SET nome='$nome', curso='$curso', endereco='$endereco', cidade='$cidade', cep='$cep' WHERE idaluno=$id");
 	//$_SESSION['message'] = "Atualizado!"; 
 	header('location: listar.php');
-}
+}*/
+if (isset($_POST['editar'])) {
+    $id = $_POST['idaluno'];
+    $nome = $_POST['nome'];
+    $curso = $_POST['curso'];
+    $endereco = $_POST['endereco'];
+    $cidade = $_POST['cidade'];
+    $cep = $_POST['cep'];
+
+    $fisica = $_POST['fisica'];
+    $historia = $_POST['historia'];
+    $portugues = $_POST['portugues'];
+    $matematica = $_POST['matematica'];
+
+    mysqli_autocommit($connection, FALSE);
+    $erro = 0;
+    // Querys
+    $query1 = "UPDATE ALUNO SET nome='$nome', curso='$curso', endereco='$endereco', cidade='$cidade', cep='$cep' WHERE idaluno=$id";
+    $query2 = "UPDATE NOTAS SET fisica = '$fisica', historia = '$historia', portugues = '$portugues', matematica = '$matematica' where fk_idaluno = $id";
+    // Teste de execução das querys
+    if (!mysqli_query($connection, $query1))
+        $erro++;
+    if (!mysqli_query($connection, $query2))
+        $erro++;
+    // Se não ocorrer erros executamos o commit para o banco de dados caso contrários desfazemos qualquer alteração
+    if ($erro == 0) {
+        mysqli_commit($connection);
+        echo "Transação realizada com sucesso, dados atualizados!";
+    } else {
+        mysqli_rollback($connection);
+        echo "Ocorrem $erro erro(s) na transação e não foi possível atualizar os dados.";
+    }
+  }
 
 ?>
 <body>
