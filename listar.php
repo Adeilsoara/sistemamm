@@ -38,7 +38,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container well">
     <h2 class="text-center">Alunos Cadastrados</h2>
     <div class="row">
       <div class="col-md-10">
@@ -60,9 +60,9 @@
           </ul>
         </nav>
       </div>
-      <div class="text-center" class="col-md-2">
+      <div class="text-center" style="margin-top: 10px; margin-left: 10px;" class="col-md-2">
         <form method="post" action="#" >
-            <select name="limite-paginas" id="limite-paginas">
+            <select name="limite-paginas" id="limite-paginas" class="form-control">
               <option disabled="disabled" selected="selected">---Limite Por Página---</option>
               <?php foreach([10,25, 50] as $limit): ?>
                 <option <?php if( isset($_POST["limite-paginas"]) && $_POST["limite-paginas"] == $limit) echo "selected" ?> value="<?= $limit; ?>"><?= $limit; ?></option>
