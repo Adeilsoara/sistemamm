@@ -39,21 +39,21 @@
 <body>
 
   <div class="container">
-    <h1 class="text-center">Alunos Cadastrados</h1>
+    <h2 class="text-center">Alunos Cadastrados</h2>
     <div class="row">
       <div class="col-md-10">
         <nav aria-label="Page navigation">
           <ul class="pagination">
-            <li class="page-item">
-              <a href="listar.php?page=<?= $Anterior; ?>" aria-label="Anterior">
+            <li>
+              <a class="page-link" href="listar.php?page=<?= $Anterior; ?>" aria-label="Anterior">
                 <span aria-hidden="true">&laquo; Anterior</span>
               </a>
             </li>
             <?php for($i = 1; $i<= $pages; $i++) : ?>
-              <li class="page-item"><a href="listar.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+              <li ><a  class="page-link" href="listar.php?page=<?= $i; ?>"><?= $i; ?></a></li>
             <?php endfor; ?>
-            <li class="page-item">
-              <a href="listar.php?page=<?= $Próximo; ?>" aria-label="Próximo">
+            <li>
+              <a class="page-link" href="listar.php?page=<?= $Próximo; ?>" aria-label="Próximo">
                 <span aria-hidden="true">Próximo &raquo;</span>
               </a>
             </li>
@@ -61,7 +61,7 @@
         </nav>
       </div>
       <div class="text-center" class="col-md-2">
-        <form method="post" action="#">
+        <form method="post" action="#" >
             <select name="limite-paginas" id="limite-paginas">
               <option disabled="disabled" selected="selected">---Limite Por Página---</option>
               <?php foreach([10,25, 50] as $limit): ?>
@@ -116,7 +116,6 @@
     })
   })
 </script>
-
 
  <a class="btn btn-sm btn-primary" href="index.php">Voltar</a> 
 
