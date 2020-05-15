@@ -8,7 +8,8 @@ if (isset($_GET['editar'])) {
 		$id = $_GET['editar'];
 		$sql = mysqli_query($connection, "SELECT * FROM ALUNO, NOTAS WHERE idaluno=$id and fk_idaluno=$id");
 
-		if (count($sql) == 1 ) {
+    $count = (is_array($sql)) ? count($sql) :1 ;
+		if ($count) {
 			$n = mysqli_fetch_array($sql);
 			$nome = $n['nome'];
 			$curso = $n['curso'];
