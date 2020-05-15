@@ -1,11 +1,28 @@
 <?php include 'header.php'; ?>
+
 <?php
 
 	include 'conexao.php';
 	
-  $sql = mysqli_query($connection, "SELECT * FROM aluno") 
+ /* $sql = mysqli_query($connection, "SELECT * FROM aluno") 
     or die(mysqli_error($connection) //caso haja um erro na consulta 
-  );
+  );*/
+
+  $limit = isset($_POST["limite-paginas"]) ? $_POST["limite-paginas"] : 10;
+  $page = isset($_GET['page']) ? $_GET['page'] : 1;
+  $start = ($page - 1) * $limit;
+  $result = $connection->query("SELECT * FROM ALUNO LIMIT $start, $limit");
+  $alunos = $result->fetch_all(MYSQLI_ASSOC);
+
+  $result1 = $connection->query("SELECT count(idaluno) AS id FROM ALUNO");
+  $custCount = $result1->fetch_all(MYSQLI_ASSOC);
+  $total = $custCount[0]['id'];
+  $pages = ceil( $total / $limit );
+
+  $Anterior = $page - 1;
+  $Próximo = $page + 1;
+ 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,48 +34,94 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
- 
 <title>Tabela</title>
 </head>
 <body>
+
+  <div class="container">
+    <h1 class="text-center">Alunos Cadastrados</h1>
+    <div class="row">
+      <div class="col-md-10">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item">
+              <a href="listar.php?page=<?= $Anterior; ?>" aria-label="Anterior">
+                <span aria-hidden="true">&laquo; Anterior</span>
+              </a>
+            </li>
+            <?php for($i = 1; $i<= $pages; $i++) : ?>
+              <li class="page-item"><a href="listar.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+            <?php endfor; ?>
+            <li class="page-item">
+              <a href="listar.php?page=<?= $Próximo; ?>" aria-label="Próximo">
+                <span aria-hidden="true">Próximo &raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="text-center" class="col-md-2">
+        <form method="post" action="#">
+            <select name="limite-paginas" id="limite-paginas">
+              <option disabled="disabled" selected="selected">---Limite Por Página---</option>
+              <?php foreach([10,25, 50] as $limit): ?>
+                <option <?php if( isset($_POST["limite-paginas"]) && $_POST["limite-paginas"] == $limit) echo "selected" ?> value="<?= $limit; ?>"><?= $limit; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </form>
+        </div>
+    </div>
 	<br><br><br>
  <div class="container table-responsive">
-  <h3>Lista de gabaritos cadastrados</h3>
-  <table class="table table-hover table-sm">
-  	<thead>
-	    <tr>
-	      <td>Id</td>
-        <td>Nome</td>
-        <td>Curso</td>	      
-	      <td>Endereço</td>
-        <td>Cidade</td>
-        <td>CEP</td>
-        <td>Opções</td>
-	    </tr>
-    </thead>
-    <?php while($dados = mysqli_fetch_assoc($sql)) { ?>
-    <tr>
-      <td><?php echo $dados['idaluno']; ?></td>
-      <td><?php echo $dados['nome']; ?></td>
-      <td><?php echo $dados['curso']; ?></td>
-      <td><?php echo $dados['endereco']; ?></td>
-      <td><?php echo $dados['cidade']; ?></td>
-      <td><?php echo $dados['cep']; ?></td>
-      <td>
+  <h3>Lista de cadastrados</h3>
+  
+      <table id="" class="table table-hover table-sm">
+            <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Nome</th>
+                      <th>Curso</th>
+                      <th>Endereco</th>
+                      <th>Cidade</th>
+                      <th>CEP</th>
+                      <th>Opções</th>
+                  </tr>
+              </thead>
+            <tbody>
+              <?php foreach($alunos as $aluno) :  ?>
+                <tr>
+                  <td><?= $aluno['idaluno']; ?></td>
+                  <td><?= $aluno['nome']; ?></td>
+                  <td><?= $aluno['curso']; ?></td>
+                  <td><?= $aluno['endereco']; ?></td>
+                  <td><?= $aluno['cidade']; ?></td>
+                  <td><?= $aluno['cep']; ?></td>
+                  <td>
        
-        <a href="editar.php?editar=<?php echo $dados['idaluno']; ?>" class="btn btn-sm btn-warning ">Editar</a>
+                   <a href="editar.php?editar=<?php echo $aluno['idaluno']; ?>" class="btn btn-sm btn-warning ">Editar</a>
 
-        
-        
-        <!-- <img src="icons/icons/trash-fill.svg"> -->
-      </td>
-    </tr>
-    <?php } ?>
-  </table>
+                 </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+
+          
+    </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#limite-paginas").change(function(){
+      $('form').submit();
+    })
+  })
+</script>
 
 
  <a class="btn btn-sm btn-primary" href="index.php">Voltar</a> 
 
 </div>
+
 </body>
+
 </html>
