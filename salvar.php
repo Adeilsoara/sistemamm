@@ -18,7 +18,4 @@
 	    $sql = mysqli_query($connection, "INSERT INTO NOTAS(fisica, historia, portugues, matematica, fk_idaluno) VALUES ('$fisica', '$historia', '$portugues', '$matematica', '$id')");
 	    header('location: index.php');
     }
-	
-		
-
 ?>

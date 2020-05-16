@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
 
 <?php
 
@@ -21,8 +21,6 @@
 
   $Anterior = $page - 1;
   $Próximo = $page + 1;
- 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,8 +47,8 @@
                 <span aria-hidden="true">&laquo; Anterior</span>
               </a>
             </li>
-            <?php for($i = 1; $i<= $pages; $i++) : ?>
-              <li ><a  class="page-link" href="listar.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+            <?php for($i = 1; $i<= $pages; $i++) :?>
+              <li ><a  class="page-link" href="listar.php?page=<?= $i; ?>"><?= $i;?></a></li>
             <?php endfor; ?>
             <li>
               <a class="page-link" href="listar.php?page=<?= $Próximo; ?>" aria-label="Próximo">
@@ -64,9 +62,9 @@
         <form method="post" action="#" >
             <select name="limite-paginas" id="limite-paginas" class="form-control">
               <option disabled="disabled" selected="selected">---Limite Por Página---</option>
-              <?php foreach([10,25, 50] as $limit): ?>
-                <option <?php if( isset($_POST["limite-paginas"]) && $_POST["limite-paginas"] == $limit) echo "selected" ?> value="<?= $limit; ?>"><?= $limit; ?></option>
-              <?php endforeach; ?>
+              <?php foreach([10,25, 50] as $limit):?>
+                <option <?php if( isset($_POST["limite-paginas"]) && $_POST["limite-paginas"] == $limit) echo "selected" ?> value="<?= $limit; ?>"><?= $limit;?></option>
+              <?php endforeach;?>
             </select>
           </form>
         </div>
@@ -88,21 +86,21 @@
                   </tr>
               </thead>
             <tbody>
-              <?php foreach($alunos as $aluno) :  ?>
+              <?php foreach($alunos as $aluno) :?>
                 <tr>
-                  <td><?= $aluno['idaluno']; ?></td>
-                  <td><?= $aluno['nome']; ?></td>
-                  <td><?= $aluno['curso']; ?></td>
-                  <td><?= $aluno['endereco']; ?></td>
-                  <td><?= $aluno['cidade']; ?></td>
-                  <td><?= $aluno['cep']; ?></td>
+                  <td><?= $aluno['idaluno'];?></td>
+                  <td><?= $aluno['nome'];?></td>
+                  <td><?= $aluno['curso'];?></td>
+                  <td><?= $aluno['endereco'];?></td>
+                  <td><?= $aluno['cidade'];?></td>
+                  <td><?= $aluno['cep'];?></td>
                   <td>
        
                    <a href="editar.php?editar=<?php echo $aluno['idaluno']; ?>" class="btn btn-sm btn-warning ">Editar</a>
 
                  </td>
                 </tr>
-              <?php endforeach; ?>
+              <?php endforeach;?>
             </tbody>
           </table>
 

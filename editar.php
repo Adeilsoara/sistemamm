@@ -1,8 +1,6 @@
-<?php include 'header.php'; ?>
-<?php 
-session_start();
+<?php include 'header.php';?>
+<?php
 include 'conexao.php';
-
 
 if (isset($_GET['editar'])) {
 		$id = $_GET['editar'];
@@ -57,7 +55,6 @@ if (isset($_POST['editar'])) {
         echo "Ocorrem $erro erro(s) na transação e não foi possível atualizar os dados.";
     }
   }
-
 ?>
 <body>
 	<div class="container">
@@ -133,8 +130,6 @@ if (isset($_POST['editar'])) {
 
   <a href="listar.php" class="btn btn-danger">Cancelar</a>
 </form>
-
- 
  
 </div>
 </body>

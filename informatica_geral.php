@@ -1,5 +1,5 @@
 <?php
-require('vendor/setasign/fpdf/fpdf.php');
+require('fpdf/fpdf.php');
 //FONTE: http://henriquecorrea.com/news/Relatorios_em_PDF_com_PHP_usando_a_classe_FPDF
 class PDF extends FPDF {
 function Header() {

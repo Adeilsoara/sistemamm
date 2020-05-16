@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -19,12 +19,11 @@
             //$curso =  $dados['curso'];
             $media =  $dados['media'];
             $nome =  $dados['nome'];
-
-          ?>
+            ?>
 
           ['<?php echo $nome ?>', '<?php echo $media ?>' ],
 
-        <?php } ?>
+        <?php }?>
         
         ]);
 
