@@ -75,7 +75,7 @@ function Footer() {
    
  }
 }
-include 'conexao.php';
+include 'bd/conexao.php';
 $pdf = new PDF('P', 'mm', 'A4');
 $pdf->AddPage();
 $pdf->AliasNbPages();

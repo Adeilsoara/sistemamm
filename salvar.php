@@ -1,5 +1,5 @@
 <?php
-	include 'conexao.php';
+	include 'bd/conexao.php';
 	
 	$nome = $_POST['nome'];
 	$curso = $_POST['curso'];

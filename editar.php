@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 <?php
-include 'conexao.php';
+include 'bd/conexao.php';
 
 if (isset($_GET['editar'])) {
 		$id = $_GET['editar'];

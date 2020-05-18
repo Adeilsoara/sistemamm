@@ -2,7 +2,7 @@
 
 <?php
 
-	include 'conexao.php';
+	include 'bd/conexao.php';
 	
  /* $sql = mysqli_query($connection, "SELECT * FROM aluno") 
     or die(mysqli_error($connection) //caso haja um erro na consulta 

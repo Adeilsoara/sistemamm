@@ -11,7 +11,7 @@
           ['Nome', 'Ranking Curso de Informática'],
         
           <?php
-          include 'conexao.php';
+          include 'bd/conexao.php';
           $sql2 = mysqli_query($connection, "SELECT nome, curso, round(sum(((fisica)+(historia)+(portugues)+(matematica))/4),2 ) AS media FROM ALUNO AS a INNER JOIN NOTAS AS n ON (a.idaluno = n.fk_idaluno) where curso like 'Info%' group by idaluno ORDER BY media ASC");
          
          
@@ -49,7 +49,7 @@
           ['Cursos', 'Total de Alunos por Curso'],
         
           <?php
-          include 'conexao.php';
+          include 'bd/conexao.php';
           $sql2 = mysqli_query($connection, "SELECT curso, count(curso) as qtd FROM aluno WHERE curso LIKE 'Enf%' GROUP BY curso UNION SELECT curso, count(curso) as qtd FROM aluno WHERE curso LIKE 'Info%' GROUP BY curso UNION SELECT curso, count(curso) as qtd FROM aluno WHERE curso LIKE 'Com%' GROUP BY curso UNION SELECT curso, count(curso) as qtd FROM aluno WHERE curso LIKE 'Adm%' GROUP BY curso ORDER BY qtd ASC");
          
           while ($dados = mysqli_fetch_array($sql2) ) {
