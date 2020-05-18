@@ -79,9 +79,7 @@
   </head>
   <body>
     <div class="container">
-    <div align="">
     <div id="grafico1" style="height: 300px;"></div>
-    </div>
     <br>
     <div id="grafico2" style="height: 300px;"></div>
     <br>
