@@ -20,9 +20,9 @@
   <table class="table table-hover table-sm ">
   	<thead>
 	    <tr>
-	        <td>Tipo</td>
-	        <td>Curso</td>
-	        <td>Relatórios</td>	      
+	        <th>Tipo</th>
+	        <th>Curso</th>
+	        <th>Relatórios</th>	      
 	    </tr>
     </thead>
     
