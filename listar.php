@@ -3,10 +3,6 @@
 <?php
 
 	include 'bd/conexao.php';
-	
- /* $sql = mysqli_query($connection, "SELECT * FROM aluno") 
-    or die(mysqli_error($connection) //caso haja um erro na consulta 
-  );*/
 
   $limit = isset($_POST["limite-paginas"]) ? $_POST["limite-paginas"] : 10;
   $page = isset($_GET['page']) ? $_GET['page'] : 1;
