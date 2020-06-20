@@ -10,7 +10,6 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
- 
 <title>Relatórios</title>
 </head>
 <body>
@@ -25,7 +24,7 @@
 	        <th>Relatórios</th>	      
 	    </tr>
     </thead>
-    
+  
     <tr>
       <td>Classificação Geral</td>
       <td>Informática</td>
