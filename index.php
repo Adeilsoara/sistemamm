@@ -75,17 +75,24 @@
   </div>
 
   </div>
-
+<label>Escolas que estudou</label>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label>Escolas que estudou</label>
-      <input type="text" class="form-control" name="sextoano" placeholder="6 Ano"> <br>
-      <input type="text" class="form-control" name="setimoano" placeholder="7 Ano"> <br>
-      <input type="text" class="form-control" name="oitavooano" placeholder="8 Ano"> <br>
-      <input type="text" class="form-control" name="oitavooano" placeholder="9 Ano"> <br>
+        <input type="text" class="form-control" name="sextoano" placeholder="6 Ano"> 
     </div>
-
+    <div class="form-group col-md-5">
+        <input type="text" class="form-control" name="setimoano" placeholder="7 Ano"> 
+    </div>
   </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="oitavoano" placeholder="8 Ano"> 
+    </div>
+    <div class="form-group col-md-5">
+        <input type="text" class="form-control" name="nonoano" placeholder="9 Ano"> 
+    </div>
+  </div>   
+
    <div class="form-row">
   <div class="form-group col-md-6">
       <label>Categoria de escola que concorrerá</label>
