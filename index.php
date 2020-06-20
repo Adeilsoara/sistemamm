@@ -1,16 +1,102 @@
 <?php include 'header.php';?>
 </head>
 <body>
-	<div class="container">
+<div class="container">
 <br><br>
 <h3>Cadastro de Alunos</h3>
   <form action="salvar.php" method="POST">
-  	 <div class="form-row">
+  <div class="form-row">
     <div class="form-group col-md-6">
       <label>Nome</label>
-      <input type="text" class="form-control" name="nome" required="">
+      <input type="text" class="form-control" name="nome" placeholder="Nome Aluno" required="">
     </div>
+    <div class="form-group col-md-2">
+      <label>Data de nascimento</label>
+      <input type="date" class="form-control" name="data" required="">
+    </div>
+     <div class="form-group col-md-1">
+      <label>Idade</label>
+      <input type="number" class="form-control" name="idade" placeholder="Idade" required="">
+    </div>
+    <div class="form-group col-md-2">
+      <label>Sexo</label>
+      <select name="sexo" class="form-control" required="">
+        <option selected></option> 
+        <option>Vamos</option>
+        <option>Fazer</option>
+        <option>Com força</option> 
+      </select>
+    </div>
+  </div>
+
+ <div class="form-row">
+  <div class="form-group col-md-6">
+    <label>Nome da Mãe </label>
+    <input type="text" class="form-control" name="mae" placeholder="Nome Mãe" required="">
+  </div>
+
+  <div class="form-group col-md-5">
+    <label>Nome do Pai </label>
+    <input type="text" class="form-control" name="pai" placeholder="Nome Pai" required="">
+  </div>
+ </div>
+ 
+ <div class="form-row">
+  <div class="form-group col-md-6">
+    <label>Endereço</label>
+    <input type="text" class="form-control" name="endereco" placeholder="Endereço" required="">
+  </div>
+  
+  <div class="form-group col-md-2">
+    <label>Bairro</label>
+    <input type="text" class="form-control" name="bairro" placeholder="Bairro" required="">
+  </div>
+
+  <div class="form-group col-md-2">
+    <label>Cidade</label>
+    <input type="text" class="form-control" name="cidade" placeholder="Cidade" required="">
+  </div>
+
+   <div class="form-group col-md-1">
+    <label>Estado</label>
+    <input type="text" class="form-control" name="estado" placeholder="Estado" required="">
+  </div>
+
+  <div class="form-row">
     <div class="form-group col-md-6">
+    <label>Telefone</label>
+    <input type="text" class="form-control" name="telefone" placeholder="Telefone" required="">
+    </div>
+
+    <div class="form-group col-md-5">
+    <label>Telefone 2</label>
+    <input type="text" class="form-control" name="telefone2" placeholder="Telefone 2">
+    </div>
+  </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Escolas que estudou</label>
+      <input type="text" class="form-control" name="sextoano" placeholder="6 Ano"> <br>
+      <input type="text" class="form-control" name="setimoano" placeholder="7 Ano"> <br>
+      <input type="text" class="form-control" name="oitavooano" placeholder="8 Ano"> <br>
+      <input type="text" class="form-control" name="oitavooano" placeholder="9 Ano"> <br>
+    </div>
+
+  </div>
+   <div class="form-row">
+  <div class="form-group col-md-6">
+      <label>Categoria de escola que concorrerá</label>
+      <select name="tipoescola" class="form-control" required="">
+        <option selected></option> 
+        <option>Escola Pública</option>
+        <option>Escola Privada</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-4">
       <label>Curso</label>
       <select name="curso" class="form-control" required="">
         <option selected></option> 
@@ -21,31 +107,18 @@
       </select>
     </div>
   </div>
- <div class="form-row">
-  <div class="form-group col-md-6">
-    <label>Endereço</label>
-    <input type="text" class="form-control" name="endereco" placeholder="Endereço" required="">
-  </div>
-
-  <div class="form-group col-md-2">
-    <!-- <label>Telefone</label>
-    <input type="text" class="form-control" name="telefone" placeholder="Telefone"> -->
-  </div>
- </div>
-
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label>Cidade</label>
-      <input type="text" class="form-control" name="cidade" required="">
+    <label>Modalidade de participação no processo</label>
+      <select name="modalidade" class="form-control" required="">
+        <option selected></option> 
+        <option>Ampla Concorrência</option>
+        <option>Cota</option>
+      </select>
     </div>
-    
-    <div class="form-group col-md-2">
-      <label>CEP</label>
-      <input type="text" class="form-control" name="cep">
     </div>
 
-  </div>
-  <h4>Notas do Aluno</h4>
+    <h4>Notas do Aluno</h4>
   <div class="form-row">
   <div class="form-group col-md-2">
       <label>Português</label>
@@ -66,9 +139,18 @@
       <input type="number" placeholder="0.00" step="0.01" min="0.00" max="10.00" class="form-control" name="historia" required="">
   </div>
  </div>
-  <br>	
+  <br>  
   <button type="submit" class="btn btn-primary" name="enviar">Salvar</button>
   </form>
 </div>
+
+</div>
+  </div>
+
+  </div>
+ 
+  </div>
+
+
 </body>
 </html>
