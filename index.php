@@ -22,9 +22,9 @@
       <label>Sexo</label>
       <select name="sexo" class="form-control" required="">
         <option selected></option> 
-        <option>Vamos</option>
-        <option>Fazer</option>
-        <option>Com força</option> 
+        <option>F</option>
+        <option>M</option>
+        <option>N</option> 
       </select>
     </div>
   </div>
@@ -65,7 +65,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
     <label>Telefone</label>
-    <input type="text" class="form-control" name="telefone" placeholder="Telefone" required="">
+    <input type="text" class="form-control" name="telefone1" placeholder="Telefone" required="">
     </div>
 
     <div class="form-group col-md-5">
@@ -74,7 +74,8 @@
     </div>
   </div>
 
-  </div>
+</div>
+
 <label>Escolas que estudou</label>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -93,7 +94,7 @@
     </div>
   </div>   
 
-   <div class="form-row">
+  <div class="form-row">
   <div class="form-group col-md-6">
       <label>Categoria de escola que concorrerá</label>
       <select name="tipoescola" class="form-control" required="">
@@ -125,7 +126,7 @@
     </div>
     </div>
 
-    <h4>Notas do Aluno</h4>
+<h4>Notas do Aluno</h4>
   <div class="form-row">
   <div class="form-group col-md-2">
       <label>Português</label>
