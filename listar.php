@@ -75,9 +75,9 @@
                       <th>Id</th>
                       <th>Nome</th>
                       <th>Curso</th>
-                      <th>Endereco</th>
                       <th>Cidade</th>
-                      <th>CEP</th>
+                      <th>Modalidade</th>
+                      <th>Categoria Escola</th>
                       <th>Opções</th>
                   </tr>
               </thead>
@@ -87,9 +87,9 @@
                   <td><?= $aluno['idaluno'];?></td>
                   <td><?= $aluno['nome'];?></td>
                   <td><?= $aluno['curso'];?></td>
-                  <td><?= $aluno['endereco'];?></td>
                   <td><?= $aluno['cidade'];?></td>
-                  <td><?= $aluno['cep'];?></td>
+                  <td><?= $aluno['tipoconcorrencia'];?></td>
+                  <td><?= $aluno['categoriaescola'];?></td>
                   <td>
        
                    <a href="editar.php?editar=<?php echo $aluno['idaluno']; ?>" class="btn btn-sm btn-warning ">Editar</a>

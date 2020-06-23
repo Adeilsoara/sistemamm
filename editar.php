@@ -5,7 +5,6 @@ include 'bd/conexao.php';
 if (isset($_GET['editar'])) {
 		$id = $_GET['editar'];
 		$sql = mysqli_query($connection, "SELECT * FROM ALUNO, NOTAS WHERE idaluno=$id and fk_idaluno=$id");
-    
     $count = (is_array($sql)) ? count($sql) :1 ;
 		if ($count) {
 			$n = mysqli_fetch_array($sql);
@@ -24,6 +23,12 @@ if (isset($_GET['editar'])) {
       $curso = $n['curso'];
       $categoriaescola = $n['categoriaescola'];
       $tipoconcorrencia = $n['tipoconcorrencia'];
+
+      //Dados Histórico
+      $sextoano = $_POST['sextoano'];
+      $setimoano = $_POST['setimoano'];
+      $oitavoano = $_POST['oitavoano'];
+      $nonoano = $_POST['nonoano'];
 
 			$fisica = $n['fisica'];
 			$historia = $n['historia'];
@@ -50,6 +55,12 @@ if (isset($_POST['editar'])) {
     $categoriaescola = $_POST['categoriaescola'];
     $tipoconcorrencia = $_POST['tipoconcorrencia'];
 
+    //Dados Histórico
+    $sextoano = $_POST['sextoano'];
+    $setimoano = $_POST['setimoano'];
+    $oitavoano = $_POST['oitavoano'];
+    $nonoano = $_POST['nonoano'];
+
     $fisica = $_POST['fisica'];
     $historia = $_POST['historia'];
     $portugues = $_POST['portugues'];
@@ -58,9 +69,7 @@ if (isset($_POST['editar'])) {
     mysqli_autocommit($connection, FALSE);
     $erro = 0;
     // Querys
-   /* $query1 = "UPDATE ALUNO SET nome = '$nome', data = '$data', idade= '$idade', sexo= '$sexo', nomemae= '$nomemae', nomepai = '$nomepai', endereco ='$endereco', bairro = '$bairro', cidade = '$cidade', estado= '$estado', telefone1 = '$telefone1', telefone2= '$telefone2', curso = '$curso', categoriaescola = '$categoriaescola', tipoconcorrencia = '$modalidade' WHERE idaluno=$id";*/
-
-   // $query1 = "UPDATE ALUNO SET nome = '$nome', curso = '$curso' WHERE idaluno=$id";
+    $query1 = "UPDATE ALUNO SET nome = '$nome', data = '$data', idade= '$idade', sexo= '$sexo', nomemae= '$nomemae', nomepai = '$nomepai', endereco = '$endereco', bairro = '$bairro', cidade = '$cidade', estado= '$estado', telefone1 = '$telefone1', telefone2 = '$telefone2', curso = '$curso', categoriaescola = '$categoriaescola', tipoconcorrencia = '$tipoconcorrencia' WHERE idaluno=$id";
 
     $query2 = "UPDATE NOTAS SET fisica = '$fisica', historia = '$historia', portugues = '$portugues', matematica = '$matematica' where fk_idaluno = $id";
     // Teste de execução das querys
