@@ -97,10 +97,10 @@
   <div class="form-row">
   <div class="form-group col-md-6">
       <label>Categoria de escola que concorrerá</label>
-      <select name="tipoescola" class="form-control" required="">
+      <select name="categoriaescola" class="form-control" required="">
         <option selected></option> 
-        <option>Escola Pública</option>
-        <option>Escola Privada</option>
+        <option>Publica</option>
+        <option>Privada</option>
       </select>
     </div>
 

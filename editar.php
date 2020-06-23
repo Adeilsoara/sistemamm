@@ -5,15 +5,25 @@ include 'bd/conexao.php';
 if (isset($_GET['editar'])) {
 		$id = $_GET['editar'];
 		$sql = mysqli_query($connection, "SELECT * FROM ALUNO, NOTAS WHERE idaluno=$id and fk_idaluno=$id");
-
+    
     $count = (is_array($sql)) ? count($sql) :1 ;
 		if ($count) {
 			$n = mysqli_fetch_array($sql);
-			$nome = $n['nome'];
-			$curso = $n['curso'];
-			$endereco = $n['endereco'];
-			$cidade = $n['cidade'];
-			$cep = $n['cep'];
+      $nome = $n['nome'];
+      $data = $n['data'];
+      $idade = $n['idade'];
+      $sexo = $n['sexo'];
+      $nomemae = $n['mae'];
+      $nomepai = $n['pai'];
+      $endereco = $n['endereco'];
+      $bairro = $n['bairro'];
+      $cidade = $n['cidade'];
+      $estado = $n['estado'];
+      $telefone1 = $n['telefone1'];
+      $telefone2 = $n['telefone2'];
+      $curso = $n['curso'];
+      $categoriaescola = $n['tipoescola'];
+      $modalidade = $n['modalidade'];
 
 			$fisica = $n['fisica'];
 			$historia = $n['historia'];
@@ -25,10 +35,20 @@ if (isset($_GET['editar'])) {
 if (isset($_POST['editar'])) {
     $id = $_POST['idaluno'];
     $nome = $_POST['nome'];
-    $curso = $_POST['curso'];
+    $data = $_POST['data'];
+    $idade = $_POST['idade'];
+    $sexo = $_POST['sexo'];
+    $nomemae = $_POST['mae'];
+    $nomepai = $_POST['pai'];
     $endereco = $_POST['endereco'];
+    $bairro = $_POST['bairro'];
     $cidade = $_POST['cidade'];
-    $cep = $_POST['cep'];
+    $estado = $_POST['estado'];
+    $telefone1 = $_POST['telefone1'];
+    $telefone2 = $_POST['telefone2'];
+    $curso = $_POST['curso'];
+    $categoriaescola = $_POST['tipoescola'];
+    $modalidade = $_POST['modalidade'];
 
     $fisica = $_POST['fisica'];
     $historia = $_POST['historia'];
@@ -38,7 +58,10 @@ if (isset($_POST['editar'])) {
     mysqli_autocommit($connection, FALSE);
     $erro = 0;
     // Querys
-    $query1 = "UPDATE ALUNO SET nome='$nome', curso='$curso', endereco='$endereco', cidade='$cidade', cep='$cep' WHERE idaluno=$id";
+   /* $query1 = "UPDATE ALUNO SET nome = '$nome', data = '$data', idade= '$idade', sexo= '$sexo', nomemae= '$nomemae', nomepai = '$nomepai', endereco ='$endereco', bairro = '$bairro', cidade = '$cidade', estado= '$estado', telefone1 = '$telefone1', telefone2= '$telefone2', curso = '$curso', categoriaescola = '$categoriaescola', tipoconcorrencia = '$modalidade' WHERE idaluno=$id";*/
+
+   // $query1 = "UPDATE ALUNO SET nome = '$nome', curso = '$curso' WHERE idaluno=$id";
+
     $query2 = "UPDATE NOTAS SET fisica = '$fisica', historia = '$historia', portugues = '$portugues', matematica = '$matematica' where fk_idaluno = $id";
     // Teste de execução das querys
     if (!mysqli_query($connection, $query1))
@@ -57,17 +80,114 @@ if (isset($_POST['editar'])) {
   }
 ?>
 <body>
-	<div class="container">
+<div class="container">
 <br><br>
 <h3>Edição de Aluno</h3>
   <form action="editar.php" method="POST">
   	<input type="hidden" name="idaluno" value="<?php echo $id; ?>">
-  	 <div class="form-row">
+    <div class="form-row">
+     
+      <div class="form-group col-md-6">
+        <label>Nome</label>
+        <input type="text" class="form-control" name="nome" value="<?php echo $nome; ?>">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label>Data de Nascimento</label>
+        <input type="date" class="form-control" name="data" value="<?php echo $data; ?>">
+      </div>
+
+      <div class="form-group col-md-1">
+        <label>Idade</label>
+        <input type="number" class="form-control" name="idade" value="<?php echo $idade; ?>">
+      </div>
+
+      <div class="form-group col-md-2">
+      <label>Sexo</label>
+        <select name="sexo" class="form-control" required="">
+          <option></option> 
+          <option value="F" <?=($sexo == 'F')?'selected':''?> >F</option>
+          <option value="M" <?=($sexo == 'M')?'selected':''?> >M</option>
+          <option value="N" <?=($sexo == 'N')?'selected':''?> >N</option> 
+        </select>
+      </div>
+  </div>
+
+  <div class="form-row">
     <div class="form-group col-md-6">
-      <label>Nome</label>
-      <input type="text" class="form-control" name="nome" value="<?php echo $nome; ?>">
+      <label>Nome da Mãe </label>
+      <input type="text" class="form-control" name="mae" value="<?php echo $nomemae; ?>">
     </div>
+    <div class="form-group col-md-5">
+      <label>Nome do Pai </label>
+      <input type="text" class="form-control" name="pai" value="<?php echo $nomepai; ?>" >
+    </div>
+  </div>
+
+  <div class="form-row">
     <div class="form-group col-md-6">
+      <label>Endereço</label>
+      <input type="text" class="form-control" name="endereco" placeholder="Endereço" required="" value="<?php echo $endereco; ?>">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label>Bairro</label>
+      <input type="text" class="form-control" name="bairro" placeholder="Bairro" required="" value="<?php echo $bairro; ?>">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label>Cidade</label>
+      <input type="text" class="form-control" name="cidade" placeholder="Cidade" required="" value="<?php echo $cidade; ?>">
+    </div>
+
+    <div class="form-group col-md-1">
+      <label>Estado</label>
+      <input type="text" class="form-control" name="estado" placeholder="Estado" required="" value="<?php echo $estado; ?>">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+    <label>Telefone</label>
+    <input type="text" class="form-control" name="telefone1" placeholder="Telefone" required="" value="<?php echo $telefone1; ?>">
+    </div>
+
+    <div class="form-group col-md-3">
+    <label>Telefone 2</label>
+    <input type="text" class="form-control" name="telefone2" placeholder="Telefone 2" value="<?php echo $telefone2; ?>">
+    </div>
+  </div>
+
+  <label>Escolas que estudou</label>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="sextoano" placeholder="6 Ano" value="<?php echo $sextoano; ?>"> 
+    </div>
+    <div class="form-group col-md-5">
+        <input type="text" class="form-control" name="setimoano" placeholder="7 Ano" value="<?php echo $setimoano; ?>"> 
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="oitavoano" placeholder="8 Ano" value="<?php echo $oitavoano; ?>" > 
+    </div>
+    <div class="form-group col-md-5">
+        <input type="text" class="form-control" name="nonoano" placeholder="9 Ano" value="<?php echo $nonoano; ?>"> 
+    </div>
+  </div>  
+ 
+  <div class="form-row">
+  <div class="form-group col-md-6">
+      <label>Categoria de escola que concorrerá</label>
+      <select name="tipoescola" class="form-control" required="">
+        <option></option> 
+        <option value="Publica" <?=($categoriaescola == 'Publica')?'selected':''?>>Publica</option>
+        <option value="Privada" <?=($categoriaescola == 'Privada')?'selected':''?>>Privada</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-4">
       <label>Curso</label>
       <span> <?php echo $curso; ?></span>
       <select name="curso" class="form-control" required="">
@@ -78,32 +198,20 @@ if (isset($_POST['editar'])) {
         <option value="Comércio" <?=($curso == 'Comércio')?'selected':''?> >Comércio</option>
       </select>
     </div>
-  </div>
-  <div class="form-row">
-  <div class="form-group col-md-6">
-    <label>Endereço</label>
-    <input type="text" class="form-control" name="endereco" placeholder="Endereço" required="" value="<?php echo $endereco; ?>" >
-  </div>
+</div>
 
-  <div class="form-group col-md-2">
-    <!-- <label>Telefone</label>
-    <input type="text" class="form-control" name="telefone" placeholder="Telefone"> -->
-  </div>
- </div>
-
-  <div class="form-row">
+   <div class="form-row">
     <div class="form-group col-md-6">
-      <label>Cidade</label>
-      <input type="text" class="form-control" name="cidade" required="" value="<?php echo $cidade; ?>">
+    <label>Modalidade de participação no processo</label>
+      <select name="modalidade" class="form-control" required="">
+        <option></option> 
+        <option value="Ampla Concorrência" <?=($modalidade == 'Ampla Concorrência')?'selected':''?>>Ampla Concorrência</option>
+        <option value="Cota" <?=($modalidade == 'Cota')?'selected':''?>>Cota</option>
+      </select>
     </div>
-    
-    <div class="form-group col-md-2">
-      <label>CEP</label>
-      <input type="text" class="form-control" name="cep" value="<?php echo $cep; ?>">
     </div>
 
-  </div>
-  <h4>Notas do Aluno</h4>
+ <h4>Notas do Aluno</h4>
   <div class="form-row">
   <div class="form-group col-md-2">
       <label>Português</label>
@@ -124,11 +232,13 @@ if (isset($_POST['editar'])) {
       <input type="number" placeholder="0.00" step="0.01" min="0.00" max="10.00" class="form-control" name="historia" required="" value="<?php echo $historia; ?>">
   </div>
  </div>
-  <br>	
 
-  <button type="submit" class="btn btn-primary" name="editar">Editar</button>
+  	
+  <br>	 
+<button type="submit" class="btn btn-primary" name="editar">Editar</button>
 
-  <a href="listar.php" class="btn btn-danger">Cancelar</a>
+<a href="listar.php" class="btn btn-danger">Cancelar</a>
+
 </form>
  
 </div>
