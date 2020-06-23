@@ -13,8 +13,8 @@ if (isset($_GET['editar'])) {
       $data = $n['data'];
       $idade = $n['idade'];
       $sexo = $n['sexo'];
-      $nomemae = $n['mae'];
-      $nomepai = $n['pai'];
+      $nomemae = $n['nomemae'];
+      $nomepai = $n['nomepai'];
       $endereco = $n['endereco'];
       $bairro = $n['bairro'];
       $cidade = $n['cidade'];
@@ -22,8 +22,8 @@ if (isset($_GET['editar'])) {
       $telefone1 = $n['telefone1'];
       $telefone2 = $n['telefone2'];
       $curso = $n['curso'];
-      $categoriaescola = $n['tipoescola'];
-      $modalidade = $n['modalidade'];
+      $categoriaescola = $n['categoriaescola'];
+      $tipoconcorrencia = $n['tipoconcorrencia'];
 
 			$fisica = $n['fisica'];
 			$historia = $n['historia'];
@@ -38,8 +38,8 @@ if (isset($_POST['editar'])) {
     $data = $_POST['data'];
     $idade = $_POST['idade'];
     $sexo = $_POST['sexo'];
-    $nomemae = $_POST['mae'];
-    $nomepai = $_POST['pai'];
+    $nomemae = $_POST['nomemae'];
+    $nomepai = $_POST['nomepai'];
     $endereco = $_POST['endereco'];
     $bairro = $_POST['bairro'];
     $cidade = $_POST['cidade'];
@@ -47,8 +47,8 @@ if (isset($_POST['editar'])) {
     $telefone1 = $_POST['telefone1'];
     $telefone2 = $_POST['telefone2'];
     $curso = $_POST['curso'];
-    $categoriaescola = $_POST['tipoescola'];
-    $modalidade = $_POST['modalidade'];
+    $categoriaescola = $_POST['categoriaescola'];
+    $tipoconcorrencia = $_POST['tipoconcorrencia'];
 
     $fisica = $_POST['fisica'];
     $historia = $_POST['historia'];
@@ -116,11 +116,11 @@ if (isset($_POST['editar'])) {
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>Nome da Mãe </label>
-      <input type="text" class="form-control" name="mae" value="<?php echo $nomemae; ?>">
+      <input type="text" class="form-control" name="nomemae" value="<?php echo $nomemae; ?>">
     </div>
     <div class="form-group col-md-5">
       <label>Nome do Pai </label>
-      <input type="text" class="form-control" name="pai" value="<?php echo $nomepai; ?>" >
+      <input type="text" class="form-control" name="nomepai" value="<?php echo $nomepai; ?>" >
     </div>
   </div>
 
@@ -180,9 +180,9 @@ if (isset($_POST['editar'])) {
   <div class="form-row">
   <div class="form-group col-md-6">
       <label>Categoria de escola que concorrerá</label>
-      <select name="tipoescola" class="form-control" required="">
+      <select name="categoriaescola" class="form-control" required="">
         <option></option> 
-        <option value="Publica" <?=($categoriaescola == 'Publica')?'selected':''?>>Publica</option>
+        <option value="Pública" <?=($categoriaescola == 'Pública')?'selected':''?>>Pública</option>
         <option value="Privada" <?=($categoriaescola == 'Privada')?'selected':''?>>Privada</option>
       </select>
     </div>
@@ -203,10 +203,10 @@ if (isset($_POST['editar'])) {
    <div class="form-row">
     <div class="form-group col-md-6">
     <label>Modalidade de participação no processo</label>
-      <select name="modalidade" class="form-control" required="">
+      <select name="tipoconcorrencia" class="form-control" required="">
         <option></option> 
-        <option value="Ampla Concorrência" <?=($modalidade == 'Ampla Concorrência')?'selected':''?>>Ampla Concorrência</option>
-        <option value="Cota" <?=($modalidade == 'Cota')?'selected':''?>>Cota</option>
+        <option value="AmplaConcorrência" <?=($tipoconcorrencia == 'AmplaConcorrência')?'selected':''?>>AmplaConcorrência</option>
+        <option value="Cota" <?=($tipoconcorrencia == 'Cota')?'selected':''?>>Cota</option>
       </select>
     </div>
     </div>

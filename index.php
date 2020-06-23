@@ -32,12 +32,12 @@
  <div class="form-row">
   <div class="form-group col-md-6">
     <label>Nome da Mãe </label>
-    <input type="text" class="form-control" name="mae" placeholder="Nome Mãe" required="">
+    <input type="text" class="form-control" name="nomemae" placeholder="Nome Mãe" required="">
   </div>
 
   <div class="form-group col-md-5">
     <label>Nome do Pai </label>
-    <input type="text" class="form-control" name="pai" placeholder="Nome Pai" required="">
+    <input type="text" class="form-control" name="nomepai" placeholder="Nome Pai" required="">
   </div>
  </div>
  
@@ -99,7 +99,7 @@
       <label>Categoria de escola que concorrerá</label>
       <select name="categoriaescola" class="form-control" required="">
         <option selected></option> 
-        <option>Publica</option>
+        <option>Pública</option>
         <option>Privada</option>
       </select>
     </div>
@@ -120,7 +120,7 @@
     <label>Modalidade de participação no processo</label>
       <select name="modalidade" class="form-control" required="">
         <option selected></option> 
-        <option>Ampla Concorrência</option>
+        <option>AmplaConcorrência</option>
         <option>Cota</option>
       </select>
     </div>

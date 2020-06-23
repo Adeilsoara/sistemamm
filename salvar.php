@@ -5,8 +5,8 @@
 	$data = $_POST['data'];
 	$idade = $_POST['idade'];
 	$sexo = $_POST['sexo'];
-	$nomemae = $_POST['mae'];
-	$nomepai = $_POST['pai'];
+	$nomemae = $_POST['nomemae'];
+	$nomepai = $_POST['nomepai'];
 	$endereco = $_POST['endereco'];
 	$bairro = $_POST['bairro'];
 	$cidade = $_POST['cidade'];
@@ -15,7 +15,7 @@
 	$telefone2 = $_POST['telefone2'];
 	$curso = $_POST['curso'];
 	$categoriaescola = $_POST['categoriaescola'];
-	$modalidade = $_POST['modalidade'];
+	$tipoconcorrencia = $_POST['tipoconcorrencia'];
 	
 	//Dados Histórico
 	$sextoano = $_POST['sextoano'];
@@ -30,7 +30,7 @@
 	$matematica = $_POST['matematica'];
 	
 	
-	 if (mysqli_query($connection, "INSERT INTO ALUNO(nome, curso, endereco, cidade, data, idade, sexo, nomemae, nomepai, bairro, estado, telefone1, telefone2, categoriaescola, tipoconcorrencia) VALUES ('$nome', '$curso', '$endereco', '$cidade', '$data', '$idade', '$sexo', '$nomemae', '$nomepai', '$bairro', '$estado', '$telefone1', '$telefone2', '$categoriaescola', '$modalidade')")) {
+	 if (mysqli_query($connection, "INSERT INTO ALUNO(nome, curso, endereco, cidade, data, idade, sexo, nomemae, nomepai, bairro, estado, telefone1, telefone2, categoriaescola, tipoconcorrencia) VALUES ('$nome', '$curso', '$endereco', '$cidade', '$data', '$idade', '$sexo', '$nomemae', '$nomepai', '$bairro', '$estado', '$telefone1', '$telefone2', '$categoriaescola', '$tipoconcorrencia')")) {
 	 	 $id = mysqli_insert_id($connection);
 	     $sql = mysqli_query($connection, "INSERT INTO NOTAS(fisica, historia, portugues, matematica, fk_idaluno) VALUES ('$fisica', '$historia', '$portugues', '$matematica', '$id')");
 	     $sql2 = mysqli_query($connection, "INSERT INTO HISTORICO (sexto_ano, setimo_ano, oitavo_ano, nono_ano, fk_idaluno) VALUES ('$sextoano', '$setimoano', '$oitavoano', '$nonoano', '$id')");
