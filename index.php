@@ -95,7 +95,7 @@
   </div>   
 
   <div class="form-row">
-  <div class="form-group col-md-6">
+  <div class="form-group col-md-3">
       <label>Categoria de escola que concorrerá</label>
       <select name="categoriaescola" class="form-control" required="">
         <option selected></option> 
@@ -104,7 +104,7 @@
       </select>
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-2">
       <label>Curso</label>
       <select name="curso" class="form-control" required="">
         <option selected></option> 
@@ -114,16 +114,19 @@
         <option>Comércio</option>
       </select>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
+
+    <div class="form-group col-md-4">
     <label>Modalidade de participação no processo</label>
-      <select name="modalidade" class="form-control" required="">
+      <select name="tipoconcorrencia" class="form-control" required="">
         <option selected></option> 
         <option>AmplaConcorrência</option>
         <option>Cota</option>
       </select>
     </div>
+  </div>
+  <div class="form-row">
+    
+    
     </div>
 
 <h4>Notas do Aluno</h4>
