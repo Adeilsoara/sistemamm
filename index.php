@@ -1,4 +1,15 @@
 <?php include 'header.php';?>
+<script type="text/javascript">
+      function Idade() {  
+           hoje = new Date;  
+           nascimento = new Date($("#nasc").val());  
+           var diferencaAnos = hoje.getFullYear() - nascimento.getFullYear();  
+           if (new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate()) <  
+               new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate()))  
+             diferencaAnos--;  
+           alert("Idade do aluno: " + diferencaAnos + " anos");
+        }
+      </script>
 </head>
 <body>
 <div class="container">
@@ -12,11 +23,11 @@
     </div>
     <div class="form-group col-md-2">
       <label>Data de nascimento</label>
-      <input type="date" class="form-control" name="data" required="">
+      <input type="date" class="form-control" name="data" required="" id="nasc" >
     </div>
      <div class="form-group col-md-1">
       <label>Idade</label>
-      <input type="number" class="form-control" name="idade" placeholder="Idade" required="">
+      <input type="number" class="form-control" name="idade" placeholder="Idade" required="" onclick="Idade();">
     </div>
     <div class="form-group col-md-2">
       <label>Sexo</label>
@@ -124,10 +135,7 @@
       </select>
     </div>
   </div>
-  <div class="form-row">
-    
-    
-    </div>
+
 
 <h4>Notas do Aluno</h4>
   <div class="form-row">
