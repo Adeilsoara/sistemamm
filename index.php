@@ -51,7 +51,7 @@
 
     <div class="form-group col-md-5">
       <label>Nome do Pai </label>
-      <input type="text" class="form-control" name="nomepai" placeholder="Nome Pai" required="">
+      <input type="text" class="form-control" name="nomepai" placeholder="Nome Pai">
     </div>
    </div>
    
@@ -63,7 +63,7 @@
     
     <div class="form-group col-md-2">
       <label>Bairro</label>
-      <input type="text" class="form-control" name="bairro" placeholder="Bairro" required="">
+      <input type="text" class="form-control" name="bairro" placeholder="Bairro" >
     </div>
 
     <div class="form-group col-md-2">
@@ -78,7 +78,7 @@
 
     <div class="form-row">
       <div class="form-group col-md-6">
-      <label>Telefone</label>
+      <label>Telefone(Obrigatório)</label>
       <input type="text" class="form-control" name="telefone1" placeholder="Telefone" required="">
       </div>
 

@@ -8,11 +8,11 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Nome', 'Ranking Curso de Informática'],
+          ['Nome', 'Ranking Curso de Enfermagem'],
         
           <?php
           include 'bd/conexao.php';
-          $sql2 = mysqli_query($connection, "SELECT nome, curso, round(sum(((fisica)+(historia)+(portugues)+(matematica))/4),2 ) AS media FROM ALUNO AS a INNER JOIN NOTAS AS n ON (a.idaluno = n.fk_idaluno) where curso like 'Info%' group by idaluno ORDER BY media ASC");
+          $sql2 = mysqli_query($connection, "SELECT nome, curso, round(sum(((fisica)+(historia)+(portugues)+(matematica))/4),2 ) AS media FROM ALUNO AS a INNER JOIN NOTAS AS n ON (a.idaluno = n.fk_idaluno) where curso like 'Enf%' group by idaluno ORDER BY media ASC");
          
           while ($dados = mysqli_fetch_array($sql2) ) {
             //$curso =  $dados['curso'];
