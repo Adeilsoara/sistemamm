@@ -31,10 +31,8 @@
     
    	  <td>
         <a href="informatica_geral.php" target="_blank" class="btn btn-sm btn-warning">Gerar</a>
-        <!-- <img src="icons/icons/trash-fill.svg"> -->
       </td>
     </tr>
-
 
     <tr>
       <td>Escola Privada</td>
@@ -42,7 +40,15 @@
     
       <td>
         <a href="informatica_privada.php" target="_blank" class="btn btn-sm btn-warning">Gerar</a>
-        <!-- <img src="icons/icons/trash-fill.svg"> -->
+      </td>
+    </tr>
+
+    <tr>
+      <td>Alunos Cotistas</td>
+      <td>Informática</td>
+    
+      <td>
+        <a href="informatica_privada.php" target="_blank" class="btn btn-sm btn-warning">Gerar</a>
       </td>
     </tr>
  
