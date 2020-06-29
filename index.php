@@ -1,4 +1,5 @@
   <?php include 'header.php';?>
+  
   <script type="text/javascript">
         function Idade() {  
              hoje = new Date;  
@@ -10,7 +11,8 @@
              //alert("Idade do aluno: " + diferencaAnos + " anos");
              document.getElementById('idade2').value = diferencaAnos;
           }
-        </script>
+  </script>
+  
   </head>
   <body>
   <div class="container">

@@ -56,10 +56,10 @@ if (isset($_POST['editar'])) {
     $tipoconcorrencia = $_POST['tipoconcorrencia'];
 
     //Dados Histórico
-    $sextoano = $_POST['sextoano'];
+   /* $sextoano = $_POST['sextoano'];
     $setimoano = $_POST['setimoano'];
     $oitavoano = $_POST['oitavoano'];
-    $nonoano = $_POST['nonoano'];
+    $nonoano = $_POST['nonoano'];*/
 
     $fisica = $_POST['fisica'];
     $historia = $_POST['historia'];
@@ -167,7 +167,7 @@ if (isset($_POST['editar'])) {
     </div>
   </div>
 
-  <label>Escolas que estudou</label>
+ <!--  <label>Escolas que estudou</label>
   <div class="form-row">
     <div class="form-group col-md-6">
         <input type="text" class="form-control" name="sextoano" placeholder="6 Ano" value="<?php echo $sextoano; ?>"> 
@@ -184,7 +184,7 @@ if (isset($_POST['editar'])) {
     <div class="form-group col-md-5">
         <input type="text" class="form-control" name="nonoano" placeholder="9 Ano" value="<?php echo $nonoano; ?>"> 
     </div>
-  </div>  
+  </div>  --> 
  
   <div class="form-row">
   <div class="form-group col-md-6">
