@@ -7,7 +7,8 @@
              if (new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate()) <  
                  new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate()))  
                diferencaAnos--;  
-             alert("Idade do aluno: " + diferencaAnos + " anos");
+             //alert("Idade do aluno: " + diferencaAnos + " anos");
+             document.getElementById('idade2').value = diferencaAnos;
           }
         </script>
   </head>
@@ -23,12 +24,12 @@
       </div>
       <div class="form-group col-md-2">
         <label>Data de nascimento</label>
-        <input type="date" class="form-control" name="data" required="" id="nasc" >
+        <input type="date" class="form-control" name="data" required="" id="nasc" onfocus="Idade();" >
       </div>
       
       <div class="form-group col-md-1">
         <label>Idade</label>
-        <input type="number" class="form-control" name="idade" placeholder="Idade" required="" onclick="Idade();">
+        <input type="number" class="form-control" name="idade" placeholder="Idade" required="" onblur="Idade();" id="idade2">
       </div>
       
       <div class="form-group col-md-2">
