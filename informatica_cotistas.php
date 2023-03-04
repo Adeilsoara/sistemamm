@@ -131,6 +131,6 @@ while ($row = mysqli_fetch_array($result)) {
     
     $y += $l;
 }
-mysqli_close();
+mysqli_close($connection);
 $pdf->Output();
 ?>
