@@ -25,10 +25,11 @@ if (isset($_GET['editar'])) {
       $tipoconcorrencia = $n['tipoconcorrencia'];
 
       //Dados Histórico
-      $sextoano = $_POST['sextoano'];
+     /* $sextoano = $_POST['sextoano'];
       $setimoano = $_POST['setimoano'];
       $oitavoano = $_POST['oitavoano'];
       $nonoano = $_POST['nonoano'];
+      */
 
 			$fisica = $n['fisica'];
 			$historia = $n['historia'];
