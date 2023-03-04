@@ -1,0 +1,143 @@
+DROP TABLE IF EXISTS `ALUNO`;
+
+CREATE TABLE `ALUNO` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `idaluno` mediumint,
+  `nome` varchar(255) default NULL,
+  `curso` TEXT default NULL,
+  `endereco` varchar(255) default NULL,
+  `cidade` varchar(255),
+  `data` varchar(255),
+  `idade` mediumint default NULL,
+  `sexo` TEXT default NULL,
+  `nomemae` varchar(255) default NULL,
+  `nomepai` varchar(255) default NULL,
+  `bairro` TEXT default NULL,
+  `estado` varchar(50) default NULL,
+  `telefone1` varchar(100) default NULL,
+  `telefone2` varchar(100) default NULL,
+  `categoriaescola` TEXT default NULL,
+  `tipoconcorrencia` TEXT default NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (1,"Nehru Gardner","Comércio","Ap #791-5496 Quis St.","Diadema","2015-08-15",14,"F","Natália","Lorenzo Gabriel","Fatima","SP","(537) 860-2274","(562) 357-2866","Indigena","Ampla"),
+  (2,"Tanisha Cherry","Comércio","Ap #350-992 Curabitur Avenue","Açailândia","2019-02-05",15,"F","Helena","José Lucas","Cajas","SP","(463) 980-1624","(935) 568-7779","Indigena","Cota"),
+  (3,"Francesca Warner","Comércio","Ap #935-7999 Et Av.","João Pessoa","2012-03-31",15,"N","Maria Laura","Yuri","Centro","CE","(880) 153-1734","(554) 348-8756","Privada","Ampla"),
+  (4,"Claire Fletcher","Informática","166-8952 Felis. Av.","Rio de Janeiro","2016-01-03",15,"M","Maria Júlia","Kaique","Cajas","PR","(673) 267-6662","(815) 437-0835","Indigena","Cota"),
+  (5,"Sonya Simon","Comércio","548-982 Porttitor St.","Camaragibe","2022-06-19",15,"F","Pietra","Guilherme","Planalto","PE","(722) 588-9489","(834) 755-9266","Publica","Ampla"),
+  (6,"Gage Douglas","Comércio","Ap #268-2382 Ligula. Road","Patos","2019-06-03",15,"N","Larissa","João Paulo","Planalto","BA","(271) 155-3154","(479) 623-8216","Privada","Ampla"),
+  (7,"Randall Byers","Enfermagem","904-9686 Id Road","Camaçari","2013-07-17",15,"N","Emanuelly","Miguel Henrique","Cajas","PB","(611) 795-4437","(340) 802-2874","Indigena","Ampla"),
+  (8,"Daryl Estes","Comércio","146-8326 Ut Street","Salvador","2022-05-01",15,"M","Catarina","Elias","Centro","PA","(617) 236-1800","(386) 316-4261","Indigena","Ampla"),
+  (9,"Prescott Hendrix","Comércio","6254 Eu Ave","Goiânia","2023-04-09",15,"F","Manuelly","Liam","Cajas","PA","(606) 665-7691","(242) 866-4333","Privada","Cota"),
+  (10,"Samuel Ramsey","Enfermagem","Ap #838-2822 Orci Ave","Chapecó","2013-05-04",15,"F","Mirella","Leonardo","Fatima","MG","(364) 440-6219","(272) 657-4447","Indigena","Cota");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (11,"Fallon Dale","Enfermagem","383-594 Neque Av.","Sousa","2010-12-04",14,"F","Amanda","José Pedro","Planalto","SP","(871) 380-2640","(215) 877-1512","Publica","Cota"),
+  (12,"Burton Ingram","Enfermagem","Ap #470-4413 A Ave","Cametá","2013-10-19",15,"M","Alice","Lucca","Planalto","CE","(152) 612-4504","(784) 814-6778","Privada","Ampla"),
+  (13,"Sharon Cantu","Enfermagem","P.O. Box 680, 8859 Vivamus St.","Colombo","2012-06-07",15,"M","Manuelly","Pedro Miguel","Planalto","PB","(413) 210-2575","(887) 553-8705","Privada","Cota"),
+  (14,"Colette Snyder","Enfermagem","902 Ullamcorper Rd.","Maringá","2021-02-11",14,"N","Maria Beatriz","Matheus Henrique","Cajas","CE","(999) 931-6063","(563) 622-2176","Privada","Cota"),
+  (15,"Carter Powell","Comércio","219-4226 Lacinia. Rd.","São José dos Pinhais","2024-02-04",16,"F","Letícia","Theodoro","Planalto","PB","(753) 721-6422","(131) 258-1913","Publica","Cota"),
+  (16,"Tanek Sims","Comércio","Ap #902-4494 Ridiculus Street","Camaçari","2010-11-22",14,"F","Maria Isabel","Vinícius","Centro","SC","(634) 766-7643","(352) 742-6114","Indigena","Cota"),
+  (17,"Beverly Quinn","Enfermagem","364-4965 Euismod Ave","Parauapebas","2016-01-02",15,"F","Vitória","Davi Luiz","Fatima","BA","(813) 523-7229","(338) 118-9640","Publica","Ampla"),
+  (18,"Tad Buck","Comércio","378-8087 Sed St.","Chapecó","2010-04-12",14,"F","Juliana","Benjamin","Centro","RS","(830) 300-6677","(544) 936-1577","Privada","Ampla"),
+  (19,"Maris Rivera","Enfermagem","Ap #981-1771 Id, Rd.","Ilhéus","2020-03-03",15,"N","Maria Flor","Alexandre","Planalto","RJ","(681) 956-5104","(783) 659-4358","Privada","Cota"),
+  (20,"Kibo Guerra","Comércio","P.O. Box 830, 9622 Amet Street","Abaetetuba","2023-03-13",16,"F","Ana Maria","Ícaro","Centro","SP","(428) 366-4455","(438) 156-9554","Publica","Ampla");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (21,"Illiana Barton","Informática","646-9188 Rutrum Avenue","Campina Grande","2009-03-21",15,"N","Isadora","Alexandre","Fatima","PB","(264) 954-6711","(382) 851-4887","Privada","Cota"),
+  (22,"Dalton Bradshaw","Enfermagem","877-1944 Nec, St.","Betim","2021-06-28",15,"M","Cecília","Erick","Fatima","RJ","(353) 478-0822","(851) 885-6524","Publica","Ampla"),
+  (23,"Libby Bean","Enfermagem","Ap #689-2433 Ut Avenue","Nova Iguaçu","2010-08-29",15,"F","Thalita","Dom","Fatima","PE","(714) 711-5173","(442) 366-4344","Privada","Cota"),
+  (24,"Adam Hines","Enfermagem","Ap #876-1392 Massa. Road","Campinas","2013-09-12",14,"M","Ana Maria","Gabriel Henrique","Cajas","RJ","(823) 815-2755","(511) 753-3888","Indigena","Cota"),
+  (25,"Isaac Bailey","Enfermagem","882-8445 Mauris St.","Florianópolis","2019-04-02",14,"M","Rebeca","Ryan","Fatima","SC","(473) 406-6443","(734) 659-3052","Publica","Cota"),
+  (26,"Sybil Johns","Enfermagem","268-9039 Enim. Rd.","Rio de Janeiro","2013-05-22",16,"N","Luana","Alexandre","Fatima","PR","(678) 632-2833","(355) 157-4317","Indigena","Ampla"),
+  (27,"Elaine Joyner","Informática","9278 Feugiat Rd.","Camaragibe","2019-03-20",15,"M","Ana Sophia","Bernardo Henrique","Centro","PE","(128) 143-3783","(287) 197-3284","Privada","Ampla"),
+  (28,"Orla Jarvis","Comércio","7906 Dui, Ave","Salvador","2020-03-26",15,"F","Olívia","Noah","Fatima","RS","(864) 262-4433","(418) 686-5460","Publica","Cota"),
+  (29,"Yeo Higgins","Informática","Ap #792-9208 Dictum Avenue","Novo Hamburgo","2014-07-27",15,"F","Maria Flor","Luiz Otávio","Fatima","RJ","(858) 890-7617","(583) 852-5087","Publica","Ampla"),
+  (30,"Simone Carver","Informática","P.O. Box 778, 4823 Massa Street","Juazeiro","2024-02-25",16,"F","Maria Luiza","Pietro Henrique","Cajas","SP","(467) 406-6315","(492) 213-2379","Publica","Cota");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (31,"Flavia Mcdonald","Comércio","561-7998 Erat, Avenue","Caxias do Sul","2014-07-30",16,"F","Melina","Leandro","Fatima","RS","(398) 988-9010","(787) 964-3807","Privada","Ampla"),
+  (32,"Carl Michael","Informática","935-6423 Amet St.","Ponta Grossa","2010-03-07",15,"F","Martina","Nicolas","Cajas","PB","(687) 894-5439","(577) 818-1819","Privada","Ampla"),
+  (33,"Reagan Wolf","Enfermagem","P.O. Box 498, 7924 Nec Road","Rio Verde","2015-10-26",15,"N","Maria Júlia","Enzo","Fatima","RS","(245) 483-5384","(892) 487-8254","Publica","Cota"),
+  (34,"Oscar Roach","Comércio","Ap #972-1530 Convallis St.","Petrolina","2010-06-24",15,"N","Laís","Gustavo","Planalto","BA","(251) 564-3251","(831) 777-3523","Privada","Cota"),
+  (35,"Dalton Gates","Enfermagem","Ap #777-7973 Faucibus. St.","Paulista","2014-10-21",14,"M","Raquel","Conrado","Cajas","BA","(674) 509-7791","(949) 467-9780","Publica","Cota"),
+  (36,"Kyle Flores","Enfermagem","Ap #282-2751 Curabitur Avenue","Águas Lindas de Goiás","2018-08-23",16,"N","Lorena Vitória","Felipe","Planalto","RJ","(534) 986-6873","(218) 203-2157","Publica","Cota"),
+  (37,"Ivor Bentley","Informática","610-3008 Quis, Road","João Pessoa","2011-02-07",15,"F","Cecília","Luiz Miguel","Planalto","PA","(564) 463-2823","(320) 675-4241","Indigena","Ampla"),
+  (38,"Bevis Langley","Informática","P.O. Box 105, 7129 Molestie Street","Governador Valadares","2022-02-02",15,"F","Laura Beatriz","Christopher","Fatima","SC","(587) 338-6761","(694) 549-4826","Publica","Cota"),
+  (39,"Nyssa Vincent","Informática","Ap #107-9538 Montes, Av.","Itajaí","2012-12-02",16,"F","Lia","Pedro Henrique","Cajas","PA","(568) 875-1227","(763) 603-0759","Publica","Ampla"),
+  (40,"Kennedy Hampton","Comércio","387-8097 Duis Rd.","Novo Hamburgo","2016-09-28",14,"N","Bruna","Guilherme","Cajas","MA","(224) 288-7557","(416) 338-2444","Privada","Cota");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (41,"Kitra Pitts","Enfermagem","2043 Nunc Ave","Santa Maria","2013-04-16",15,"M","Rafaela","José Arthur","Fatima","PR","(411) 489-8416","(721) 358-4266","Privada","Cota"),
+  (42,"Aladdin Hendrix","Enfermagem","148-9783 Augue St.","Maranguape","2011-11-09",16,"N","Diana","Dom","Fatima","GO","(413) 236-8737","(114) 647-6216","Indigena","Cota"),
+  (43,"Ria Poole","Informática","Ap #161-4183 Proin Street","Salvador","2017-04-22",15,"N","Heloise","Matteo","Fatima","PE","(811) 436-8184","(500) 871-0588","Publica","Ampla"),
+  (44,"Ignatius Boyd","Comércio","Ap #437-5987 Ipsum. St.","Santa Rita","2021-07-12",15,"F","Heloise","Carlos Henrique","Cajas","PB","(113) 158-6644","(206) 275-1728","Indigena","Cota"),
+  (45,"Hiram Rollins","Informática","148-7659 A, Ave","São José","2017-06-21",15,"F","Amanda","Matteo","Cajas","SC","(237) 812-0512","(713) 833-2833","Publica","Ampla"),
+  (46,"Olga Castro","Enfermagem","1992 Per Rd.","Betim","2020-05-12",16,"N","Hannah","João Emanuel","Planalto","MA","(103) 369-1967","(812) 485-5672","Indigena","Cota"),
+  (47,"Veda Little","Enfermagem","923-6920 Scelerisque Road","Maringá","2010-03-03",14,"F","Maria Isabella","Arthur Felipe","Centro","MG","(762) 899-2705","(546) 245-2179","Privada","Ampla"),
+  (48,"Emerson Chan","Comércio","569-5880 Pede, St.","João Pessoa","2016-11-26",15,"M","Natália","Derick","Planalto","PR","(513) 211-7166","(653) 588-7165","Privada","Cota"),
+  (49,"Lewis Cabrera","Comércio","156-352 Imperdiet, Ave","Chapadinha","2014-06-03",16,"F","Antonella","Apolo","Cajas","PR","(918) 649-0643","(264) 648-6774","Privada","Cota"),
+  (50,"Baxter Alexander","Comércio","Ap #480-2634 Proin Av.","Joinville","2015-09-29",15,"F","Luísa Helena","João Paulo","Cajas","PB","(535) 827-5545","(366) 118-7941","Privada","Cota");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (51,"Montana Byrd","Comércio","5334 Nullam Street","Colombo","2011-02-14",15,"F","Maria Isabella","João Pedro","Fatima","MA","(281) 665-8793","(305) 139-3663","Publica","Cota"),
+  (52,"Aquila Daniels","Comércio","592-4933 Praesent Ave","Santa Rita","2012-02-21",14,"F","Analu","Tomás","Planalto","PA","(278) 331-2322","(173) 418-5242","Publica","Ampla"),
+  (53,"Miranda Wells","Enfermagem","Ap #808-2879 Felis St.","Aparecida de Goiânia","2010-12-27",14,"F","Valentina","Rafael","Cajas","PR","(722) 448-1931","(699) 488-8084","Privada","Ampla"),
+  (54,"Sheila Roy","Informática","5208 Sed St.","Niterói","2020-08-09",15,"N","Maria Liz","Arthur Felipe","Fatima","SC","(166) 710-7663","(284) 156-3557","Publica","Cota"),
+  (55,"Alana Leblanc","Enfermagem","P.O. Box 850, 9457 Lectus St.","Campina Grande","2015-09-02",16,"M","Aline","Álvaro","Planalto","CE","(685) 142-5327","(694) 335-2422","Publica","Cota"),
+  (56,"Signe Bender","Enfermagem","398-6108 Turpis. St.","Santa Luzia","2018-10-23",14,"F","Teresa","Samuel","Centro","PE","(742) 919-3315","(966) 888-0325","Indigena","Ampla"),
+  (57,"Zeus Hughes","Enfermagem","P.O. Box 974, 9930 Sociosqu Rd.","Cametá","2013-07-07",14,"N","Clara","José Arthur","Fatima","PE","(202) 724-3157","(703) 247-6476","Publica","Cota"),
+  (58,"Elton Wiggins","Enfermagem","5645 Cum Ave","São João de Meriti","2013-07-10",14,"M","Diana","Arthur Felipe","Cajas","GO","(355) 468-9211","(753) 823-5383","Privada","Ampla"),
+  (59,"Driscoll Hanson","Enfermagem","Ap #672-6852 Quam Rd.","Campina Grande","2011-07-26",14,"F","Valentina","Vitor","Centro","PE","(591) 263-4779","(425) 848-8396","Publica","Cota"),
+  (60,"Lev Patel","Informática","Ap #220-5707 Ac Rd.","Uberlândia","2019-09-03",14,"N","Antonella","Kauê","Cajas","SC","(745) 588-2572","(774) 662-2444","Privada","Ampla");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (61,"Ivory Terry","Comércio","1076 Laoreet Road","Canoas","2015-08-27",16,"F","Ana Helena","Joaquim","Cajas","CE","(438) 175-6057","(592) 830-3704","Privada","Ampla"),
+  (62,"Stone Lambert","Enfermagem","Ap #779-4788 Consectetuer Road","São Luís","2020-07-03",15,"N","Laura Beatriz","Enzo Miguel","Centro","PE","(653) 582-6342","(744) 614-2228","Privada","Cota"),
+  (63,"Eve Flores","Enfermagem","625-3399 Odio. Avenue","Jaboatão dos Guararapes","2009-12-21",15,"F","Emanuelly Vitória","Apolo","Cajas","PB","(167) 311-5968","(518) 563-7725","Privada","Cota"),
+  (64,"Arthur Duncan","Comércio","221-9098 Quisque Av.","Betim","2015-10-15",14,"N","Ana Cecília","Luiz Otávio","Planalto","PR","(536) 330-2192","(285) 443-8896","Privada","Cota"),
+  (65,"Emerson Nelson","Enfermagem","647-6721 Nunc Av.","Barra do Corda","2014-01-20",15,"M","Valentina","André","Centro","MG","(314) 473-7245","(364) 566-7991","Indigena","Ampla"),
+  (66,"Dylan Gardner","Enfermagem","Ap #815-3217 Sollicitudin Ave","Patos","2019-12-02",15,"F","Luana","Enzo Miguel","Cajas","RS","(283) 865-8348","(217) 221-6348","Indigena","Cota"),
+  (67,"Shoshana Fry","Comércio","P.O. Box 435, 4405 Mauris Street","Cabo de Santo Agostinho","2009-09-25",15,"M","Sophie","Murilo","Fatima","PA","(981) 677-7835","(553) 904-7455","Indigena","Cota"),
+  (68,"Renee Frederick","Comércio","890-3464 Pede. Street","Piracicaba","2013-01-01",16,"N","Emilly","Cauã","Cajas","PR","(231) 503-3784","(534) 574-5986","Publica","Cota"),
+  (69,"Olivia Roy","Comércio","P.O. Box 449, 6926 Leo St.","Salvador","2021-11-21",15,"F","Maria Alice","Álvaro","Planalto","PA","(905) 981-4837","(730) 358-9388","Privada","Cota"),
+  (70,"Carol Rosales","Enfermagem","399-6709 A, St.","João Pessoa","2011-11-08",14,"M","Amanda","Tomás","Fatima","SP","(821) 226-9624","(622) 313-7711","Publica","Ampla");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (71,"Dai Reid","Comércio","Ap #621-4971 Mauris St.","Bayeux","2015-08-25",15,"F","Maria Cecília","Alexandre","Centro","PB","(732) 674-7922","(743) 874-6738","Indigena","Ampla"),
+  (72,"Raja Gibson","Enfermagem","P.O. Box 312, 2725 Arcu. Road","Chapecó","2010-05-01",14,"F","Nina","Paulo","Centro","PB","(747) 466-5052","(554) 222-6445","Privada","Cota"),
+  (73,"Amber Villarreal","Enfermagem","125-2579 Egestas Av.","Porto Alegre","2018-07-27",16,"F","Yasmin","Estêvão","Cajas","CE","(761) 144-5111","(416) 254-9601","Privada","Cota"),
+  (74,"Daryl Mccormick","Enfermagem","Ap #251-8049 Orci. Rd.","Santa Inês","2020-04-24",14,"F","Natália","Davi","Cajas","PA","(775) 861-0620","(552) 884-5334","Indigena","Ampla"),
+  (75,"Bevis Le","Comércio","7546 Sem, Road","Maringá","2014-04-05",15,"M","Maria Isis","Lorenzo Miguel","Cajas","RS","(555) 374-5249","(996) 198-2079","Privada","Ampla"),
+  (76,"Chloe Sparks","Enfermagem","224-2925 Dis Ave","Mogi das Cruzes","2015-03-16",14,"F","Lara Sophia","Hugo","Cajas","SP","(779) 813-1546","(211) 220-5565","Privada","Ampla"),
+  (77,"Jada Gentry","Enfermagem","Ap #331-8929 Cum Rd.","Valparaíso de Goiás","2012-09-21",15,"F","Ana Liz","Pedro Lucca","Planalto","CE","(928) 852-5454","(428) 162-9827","Publica","Cota"),
+  (78,"Steel Santos","Informática","Ap #222-4014 Vel, Avenue","Juiz de Fora","2022-08-27",16,"M","Catarina","Arthur","Cajas","CE","(875) 371-3185","(631) 724-3971","Publica","Cota"),
+  (79,"Fulton Burgess","Informática","Ap #663-102 Laoreet, Rd.","Novo Hamburgo","2014-02-07",15,"N","Maria Laura","José Henrique","Centro","PA","(386) 648-5650","(988) 935-3205","Privada","Cota"),
+  (80,"Kareem Potter","Enfermagem","776-7952 Fermentum Ave","Valparaíso de Goiás","2015-05-05",14,"F","Heloise","Lucas","Fatima","CE","(842) 484-8572","(254) 291-3645","Privada","Ampla");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (81,"Martin Keller","Enfermagem","Ap #938-9341 Consectetuer Rd.","Itajaí","2009-03-09",15,"F","Emilly Vitória","Frederico","Planalto","MA","(755) 334-6762","(823) 467-0134","Privada","Ampla"),
+  (82,"Griffith Smith","Comércio","Ap #735-7307 Sed Rd.","Marabá","2010-04-20",15,"F","Maria Esther","Miguel Henrique","Cajas","MG","(770) 513-7443","(483) 862-4876","Publica","Cota"),
+  (83,"Fuller Pickett","Enfermagem","822-9957 Egestas St.","Balsas","2015-08-07",16,"F","Olívia","Luiz Otávio","Cajas","CE","(115) 357-5252","(693) 287-3911","Indigena","Ampla"),
+  (84,"Tatyana Williams","Enfermagem","Ap #724-8326 Tristique St.","Porto Alegre","2021-07-13",14,"F","Ana Laura","Pietro Henrique","Cajas","RJ","(716) 936-3415","(982) 370-8260","Privada","Cota"),
+  (85,"Duncan Reilly","Enfermagem","Ap #827-7939 Malesuada Rd.","Betim","2019-12-18",16,"N","Fernanda","Ezequiel","Cajas","GO","(411) 780-2546","(707) 954-5126","Privada","Ampla"),
+  (86,"Trevor Caldwell","Comércio","498-883 Tempus Street","Chapadinha","2020-08-12",14,"F","Alice","Davi Henrique","Fatima","MA","(782) 513-7908","(762) 215-3644","Publica","Ampla"),
+  (87,"Jennifer Figueroa","Enfermagem","Ap #777-5722 Et Rd.","Ilhéus","2018-04-25",15,"F","Valentina","Afonso","Cajas","SC","(128) 636-9143","(531) 444-5076","Privada","Ampla"),
+  (88,"Jamal Gates","Informática","913-7890 Amet St.","Campinas","2015-02-18",15,"F","Aurora","Álvaro","Cajas","RJ","(196) 883-0258","(854) 218-2866","Publica","Ampla"),
+  (89,"Wayne Jacobson","Enfermagem","Ap #420-7240 Massa. Av.","Timon","2018-11-27",15,"F","Raquel","Cauã","Fatima","RS","(754) 214-5322","(868) 373-1768","Publica","Cota"),
+  (90,"Basil Sellers","Comércio","513-9979 At Avenue","Itapipoca","2014-04-09",14,"F","Lavínia","Enzo Gabriel","Cajas","RJ","(655) 753-0451","(952) 794-6365","Privada","Ampla");
+INSERT INTO `ALUNO` (`idaluno`,`nome`,`curso`,`endereco`,`cidade`,`data`,`idade`,`sexo`,`nomemae`,`nomepai`,`bairro`,`estado`,`telefone1`,`telefone2`,`categoriaescola`,`tipoconcorrencia`)
+VALUES
+  (91,"Minerva Burke","Enfermagem","Ap #408-7876 Tincidunt St.","Uberlândia","2013-07-31",15,"F","Agnes","Dante","Centro","PR","(704) 387-4706","(882) 566-4513","Privada","Ampla"),
+  (92,"Honorato Tate","Enfermagem","Ap #115-473 Donec Road","Açailândia","2010-04-13",15,"F","Ana Vitória","Daniel","Fatima","GO","(238) 795-4526","(658) 165-5561","Privada","Cota"),
+  (93,"Lucy Mccray","Informática","Ap #925-5893 Nunc Ave","João Pessoa","2010-06-12",15,"F","Rebeca","Pedro Gabriel","Cajas","GO","(676) 779-9428","(163) 172-5638","Privada","Cota"),
+  (94,"Tallulah Serrano","Informática","P.O. Box 300, 1530 Proin Rd.","Campinas","2024-02-15",15,"F","Débora","Heitor Miguel","Cajas","SP","(415) 728-6223","(376) 482-8480","Privada","Ampla"),
+  (95,"Cailin Vargas","Enfermagem","204-2037 Eget Rd.","Chapadinha","2014-04-16",15,"M","Lauren","Nicolas Gabriel","Fatima","PB","(587) 153-4144","(819) 272-4255","Publica","Cota"),
+  (96,"Amity Woods","Enfermagem","222-3797 Eu Ave","Fortaleza","2014-04-07",16,"N","Jade","Augusto","Fatima","MA","(461) 610-4195","(478) 154-2242","Publica","Cota"),
+  (97,"Oleg Knox","Enfermagem","8107 Non St.","Novo Hamburgo","2011-08-13",14,"N","Ayla Sophia","Murilo","Fatima","PB","(489) 171-4257","(274) 468-7551","Privada","Ampla"),
+  (98,"Colton Mooney","Enfermagem","Ap #331-8425 Sit Rd.","Piracicaba","2009-10-22",15,"N","Maria Liz","Pedro Lucca","Fatima","SP","(681) 419-0135","(849) 358-5415","Publica","Ampla"),
+  (99,"Dorothy Herring","Enfermagem","Ap #286-6120 Cursus St.","Chapecó","2015-08-05",15,"F","Júlia","Davi Miguel","Centro","PB","(373) 308-8833","(114) 948-4532","Indigena","Ampla"),
+  (100,"Ruby Hunt","Informática","526-310 Nullam Rd.","Salvador","2016-08-22",14,"M","Eloá","Bruno","Cajas","MA","(371) 646-5137","(365) 965-5608","Publica","Cota");
