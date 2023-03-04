@@ -1,11 +1,22 @@
 /* sist_logico: */
 
+/* versão 2.0*/
 CREATE TABLE ALUNO (
     nome varchar(50),
     curso varchar(20),
     endereco varchar(100),
-    cep varchar(15),
     cidade varchar(30),
+    data date,
+    idade varchar(4),
+    sexo char(1),
+    nomemae varchar(50),
+    nomepai varchar(50),
+    bairro varchar(50),
+    estado char(2),
+    telefone1 varchar(15),
+    telefone2 varchar(15),
+    categoriaescola varchar(30),
+    tipoconcorrencia varchar(50),
     idaluno int auto_increment PRIMARY KEY
 );
 
@@ -22,3 +33,4 @@ ALTER TABLE NOTAS ADD CONSTRAINT fk_idaluno_notas
     FOREIGN KEY (fk_idaluno)
     REFERENCES ALUNO (idaluno)
     ON DELETE RESTRICT;
+
